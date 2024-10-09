@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD Café</title>
+</head>
+<body>
+    <h1>CRUD Café</h1>
+
+    <!-- Formulário para inserir novo café -->
+    <form action="/criar" method="post">
+        <input type="text" name="nome" placeholder="Digite o nome do café" required>
+        <input type="submit" value="Inserir">
+    </form>
+
+    <!-- Lista de cafés -->
+    <h2>Cafés:</h2>
+    <ul>
+        {% for cafe in cafes %}
+        <li>{{ cafe }}</li>
+        {% endfor %}
+    </ul>   
+
+    <!-- Formulário para atualizar café existente -->
+    <h2>Atualizar café:</h2>
+    <form action="/alterar" method="post">
+        <input type="text" name="old_name" placeholder="Nome atual do café" required>
+        <input type="text" name="new_name" placeholder="Novo nome do café" required>
+        <input type="submit" value="Alterar">
+    </form>
+
+    <!-- Formulário para apagar um café -->
+    <h2>Apagar café:</h2>
+    <form action="/apagar" method="post">
+        <input type="text" name="nome" placeholder="Nome do café" required>
+        <input type="submit" value="Apagar">
+    </form>
+
+</body>
+</html>

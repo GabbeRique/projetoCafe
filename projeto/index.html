@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Banco Afetto Cafeteria</title>
+</head>
+
+<body>
+  <header style="background-color: #484D50"></header>
+
+  <h1>CRUD estoque de cafés</h1>
+
+  #Create
+  <h2>Adicionar café ao catálogo:</h2>
+  <form action="/criar" method="post">
+    <input type="text" name="nome" placeholder="Adicione cafés ao nosso catálogo" required>
+    <input type="submit" value="Inserir">
+  </form>
+
+  <h2>Cafés:</h2>
+  <ul>
+    {% for cafe in cafes %}
+      <li>{{ cafe }}</li>
+    {% endfor %}
+  </ul>
+
+  <hr>
+
+  # Update
+  <h2>Atualizar lista de cafés:</h2>
+  <form action="/alterar" method="post">
+    <input type="text" name="antigo_name" placeholder="Nome atual" required>
+    <input type="text" name="novo_name" placeholder="Novo nome" required>
+    <input type="submit" value="Alterar">
+  </form>
+
+  <hr>
+
+  #Delete 
+  <h2>Apagar café:</h2>
+  <form action="/apagar" method="post">
+    <input type="text" name="nome" placeholder="Nome do café" required>
+    <input type="submit" value="Apagar">
+  </form>
+</body>
+
+</html>
